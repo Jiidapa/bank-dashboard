@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import PinPage from "./page";
+import Pin from "./Pin";
 import { ComponentProps } from "react";
 
 jest.mock("next/image", () => ({
@@ -10,7 +10,7 @@ jest.mock("next/image", () => ({
 
 describe("Pin Page", () => {
   it("should render pin page", () => {
-    render(<PinPage />);
+    render(<Pin />);
 
     expect(screen.getByAltText("avatar")).toHaveAttribute(
       "src",
