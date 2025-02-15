@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { SESSION_AUTH_KEY } from "@/constant/route";
+import { MAIN_PAGE, SESSION_AUTH_KEY } from "@/constant/route";
 import backspaceIcon from "../../../public/images/backspaec.png";
 import clsx from "clsx";
 
@@ -26,7 +26,7 @@ const Pin = () => {
   useEffect(() => {
     if (pin.length === maxPinDigit) {
       sessionStorage.setItem(SESSION_AUTH_KEY, "true");
-      router.push("/");
+      router.push(MAIN_PAGE);
     }
   }, [pin, router]);
 
