@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { pinPage } from "@/constant/route";
+import { PIN_PAGE } from "@/constant/route";
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -13,7 +13,7 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
     const token = sessionStorage.getItem(sessionAuthKey);
 
     if (token !== "true") {
-      router.push(pinPage);
+      router.push(PIN_PAGE);
     } else {
       setIsAuthenticated(true);
     }
