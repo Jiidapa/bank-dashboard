@@ -4,7 +4,14 @@ import { ComponentProps } from "react";
 
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: (props: ComponentProps<"img">) => <img {...props} />,
+  default: (props: ComponentProps<"img">) => (
+    <img
+      alt={props.alt}
+      src={props.src}
+      width={props.width}
+      height={props.height}
+    />
+  ),
 }));
 
 describe("Main Bank", () => {
