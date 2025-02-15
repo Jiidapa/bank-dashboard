@@ -89,14 +89,16 @@ describe("Main Bank", () => {
     });
   });
 
-  describe("Recently Section", () => {
-    it("should render recently list", () => {
+  describe("Recent Transactions Section", () => {
+    it("should render recent transactions list", () => {
       const { getByText, getAllByText, getAllByRole } = renderMainBank();
 
-      const recentlyAvatars = getAllByRole("img", { name: "Recently Avatar" });
-      expect(recentlyAvatars).toHaveLength(6);
+      const recentTransactionAvatars = getAllByRole("img", {
+        name: "Recent Transactions Avatar",
+      });
+      expect(recentTransactionAvatars).toHaveLength(6);
 
-      recentlyAvatars.forEach((avatar) => {
+      recentTransactionAvatars.forEach((avatar) => {
         expect(avatar).toHaveAttribute(
           "src",
           "https://dummyimage.com/54x54/999/fff"

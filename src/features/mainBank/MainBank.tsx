@@ -103,7 +103,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">Emily</span>
@@ -116,7 +116,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">AbcdEfghiJKlmN</span>
@@ -129,7 +129,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">Jone Kiersten</span>
@@ -142,7 +142,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">Emily</span>
@@ -155,7 +155,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">Emily</span>
@@ -168,7 +168,7 @@ const MainBank = () => {
                       src="https://dummyimage.com/54x54/999/fff"
                       width={54}
                       height={54}
-                      alt="Recently Avatar"
+                      alt="Recent Transactions Avatar"
                     />
                   </span>
                   <span className="rctly__name">MarkYu Gonzales</span>

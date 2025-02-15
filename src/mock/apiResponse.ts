@@ -15,7 +15,7 @@ type Account = {
   progress?: number;
 };
 
-type Recent = {
+type RecentTransaction = {
   name: string;
   image: string;
   isBank: boolean;
@@ -82,7 +82,7 @@ export const account: Account[] = [
   },
 ];
 
-export const recent: Recent[] = [
+export const recentTransactions: RecentTransaction[] = [
   {
     name: "Emily",
     image: "https://dummyimage.com/54x54/999/fff",
