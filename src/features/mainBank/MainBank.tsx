@@ -184,6 +184,7 @@ const MainBank = () => {
               <Image
                 src="../img/main/img-debitcard-make.png"
                 alt="Image main make"
+                fill
               />
             </span>
             <strong className="main-make__tit">Make your Debit Card</strong>
@@ -444,6 +445,8 @@ const MainBank = () => {
             <span className="main-prod__cms-ico">
               <Image
                 src="https://dummyimage.com/54x54/999/fff"
+                width={54}
+                height={54}
                 alt="Main Product"
               />
             </span>
