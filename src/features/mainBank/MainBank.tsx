@@ -181,11 +181,11 @@ const MainBank = () => {
             style={{ display: "none" }}
           >
             <span className="main-make__img">
-              <Image
-                src="../img/main/img-debitcard-make.png"
-                alt="Image main make"
-                fill
-              />
+              {/*<Image*/}
+              {/*  src="../img/main/img-debitcard-make.png"*/}
+              {/*  alt="Image main make"*/}
+              {/*  fill*/}
+              {/*/>*/}
             </span>
             <strong className="main-make__tit">Make your Debit Card</strong>
             <p className="main-make__dsc">
