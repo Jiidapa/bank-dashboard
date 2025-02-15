@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Pin from "./Pin";
 import { ComponentProps } from "react";
@@ -10,31 +10,31 @@ jest.mock("next/image", () => ({
 
 describe("Pin Page", () => {
   it("should render pin page", () => {
-    render(<Pin />);
+    const { getByAltText, getByText } = render(<Pin />);
 
-    expect(screen.getByAltText("avatar")).toHaveAttribute(
+    expect(getByAltText("avatar")).toHaveAttribute(
       "src",
       "https://dummyimage.com/200x200/999/fff"
     );
-    expect(screen.getByText("Interview User")).toBeInTheDocument();
+    expect(getByText("Interview User")).toBeInTheDocument();
     expect(
-      screen.getByText(/Invalid PIN Code\.You have 3 attempt left\./i)
+      getByText(/Invalid PIN Code\.You have 3 attempt left\./i)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Invalid PIN Code\.You have 3 attempt left\./i)
+      getByText(/Invalid PIN Code\.You have 3 attempt left\./i)
     ).not.toBeVisible();
-    expect(screen.getByText("Login with ID / Password")).toBeInTheDocument();
-    expect(screen.getByText("Powered by TestLab")).toBeInTheDocument();
-    expect(screen.getByText("1")).toBeInTheDocument();
-    expect(screen.getByText("2")).toBeInTheDocument();
-    expect(screen.getByText("3")).toBeInTheDocument();
-    expect(screen.getByText("4")).toBeInTheDocument();
-    expect(screen.getByText("5")).toBeInTheDocument();
-    expect(screen.getByText("6")).toBeInTheDocument();
-    expect(screen.getByText("7")).toBeInTheDocument();
-    expect(screen.getByText("8")).toBeInTheDocument();
-    expect(screen.getByText("9")).toBeInTheDocument();
-    expect(screen.getByText("0")).toBeInTheDocument();
-    expect(screen.getByText("Delete")).toBeInTheDocument();
+    expect(getByText("Login with ID / Password")).toBeInTheDocument();
+    expect(getByText("Powered by TestLab")).toBeInTheDocument();
+    expect(getByText("1")).toBeInTheDocument();
+    expect(getByText("2")).toBeInTheDocument();
+    expect(getByText("3")).toBeInTheDocument();
+    expect(getByText("4")).toBeInTheDocument();
+    expect(getByText("5")).toBeInTheDocument();
+    expect(getByText("6")).toBeInTheDocument();
+    expect(getByText("7")).toBeInTheDocument();
+    expect(getByText("8")).toBeInTheDocument();
+    expect(getByText("9")).toBeInTheDocument();
+    expect(getByText("0")).toBeInTheDocument();
+    expect(getByText("Delete")).toBeInTheDocument();
   });
 });
