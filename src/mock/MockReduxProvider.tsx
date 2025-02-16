@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { rootReducer } from "@/store/rootReducer";
 import {
+  accounts,
   banners,
   debitCards,
   recentTransactions,
@@ -29,6 +30,11 @@ const mockStore = {
   } as DebitCardsState,
   banner: {
     data: banners,
+    loading: false,
+    error: null,
+  },
+  account: {
+    data: accounts,
     loading: false,
     error: null,
   },

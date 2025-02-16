@@ -3,7 +3,7 @@ export type User = {
   greetingMessage: string;
 };
 
-type Account = {
+export type Account = {
   type: string;
   amount: number;
   currency: string;
@@ -41,7 +41,7 @@ export const user: User = {
   greetingMessage: "Have a nice day",
 };
 
-export const account: Account[] = [
+export const accounts: Account[] = [
   {
     type: "saving-account",
     amount: 62000.0,

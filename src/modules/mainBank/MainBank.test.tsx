@@ -2,7 +2,7 @@ import MainBank from "./MainBank";
 import { render, within } from "@testing-library/react";
 import { ComponentProps } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { banners, debitCards } from "@/mock/apiResponse";
+import { accounts, banners, debitCards } from "@/mock/apiResponse";
 
 jest.mock("next/image", () => ({
   __esModule: true,
@@ -68,6 +68,9 @@ describe("Main Bank", () => {
         },
         banner: {
           data: banners,
+        },
+        account: {
+          data: accounts,
         },
       })
     );
