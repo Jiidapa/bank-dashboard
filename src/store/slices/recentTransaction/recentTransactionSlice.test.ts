@@ -8,9 +8,6 @@ import userSlice, {
 import { recentTransactions } from "@/mock/apiResponse";
 import { RootState } from "@/store/store";
 
-const name = "Clare";
-const greetingMessage = "Have a nice day";
-
 describe("RecentTransactionSlice", () => {
   describe("actions", () => {
     const previousState: RecentTransactionState = {
