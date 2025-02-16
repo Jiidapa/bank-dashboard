@@ -2,7 +2,7 @@ import {
   fetchUserRequest,
   fetchUserSuccess,
   fetchUserFailure,
-} from "../slices/user/userSlice";
+} from "../../slices/user/userSlice";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchUser } from "@/services/user";
 
