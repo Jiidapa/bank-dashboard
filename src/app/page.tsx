@@ -1,4 +1,4 @@
-import MainBank from "@/features/mainBank/MainBank";
+import MainBank from "@/modules/mainBank/MainBank";
 import PrivateRoute from "@/components/PrivateRoute/PrivateRoute";
 
 const MainBankPage = () => {

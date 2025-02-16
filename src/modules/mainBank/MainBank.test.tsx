@@ -1,6 +1,7 @@
 import MainBank from "./MainBank";
 import { render, within } from "@testing-library/react";
 import { ComponentProps } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 jest.mock("next/image", () => ({
   __esModule: true,
@@ -14,7 +15,23 @@ jest.mock("next/image", () => ({
   ),
 }));
 
+jest.mock("react-redux", () => ({
+  useDispatch: jest.fn(),
+  useSelector: jest.fn(),
+}));
+
 describe("Main Bank", () => {
+  const mockDispatch = jest.fn();
+
+  beforeEach(() => {
+    (useDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
+    (useSelector as unknown as jest.Mock).mockImplementation((selector) =>
+      selector({
+        user: { name: "Clare", greetingMessage: "Have a nice day" },
+      })
+    );
+  });
+
   const renderMainBank = () => render(<MainBank />);
 
   it("should render mainBank", () => {
@@ -322,8 +339,6 @@ describe("Main Bank", () => {
       within(needToRepayCard).getByRole("link", { name: "Pay" })
     ).toHaveAttribute("href", "#");
   });
-
-  it("should render `Travel New York` card", () => {});
 
   it("should main product section", () => {
     const { getByText } = renderMainBank();

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Greeting from "@/modules/mainBank/components/Greeting";
 
 const MainBank = () => {
   return (
@@ -14,11 +15,7 @@ const MainBank = () => {
 
       <main className="container container--main">
         <div className="content_wrap">
-          <div className="main-top">
-            <h1 className="main-top__tit main-loading main-loading--order1">
-              Have a nice day Clare
-            </h1>
-          </div>
+          <Greeting />
 
           <div className="main-acc main-acc--large main-loading main-loading--order3">
             <div className="main-acc__top" data-testid="main-account-top">
