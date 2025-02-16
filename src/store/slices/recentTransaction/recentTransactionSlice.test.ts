@@ -1,4 +1,4 @@
-import userSlice, {
+import recentTransactionSlice, {
   getRecentTransaction,
   fetchRecentTransactionRequest,
   fetchRecentTransactionSuccess,
@@ -17,15 +17,15 @@ describe("RecentTransactionSlice", () => {
     };
 
     it("should return the initial state", () => {
-      expect(userSlice(undefined, { type: "unknown" })).toEqual({
+      expect(recentTransactionSlice(undefined, { type: "unknown" })).toEqual({
         data: [],
         loading: false,
         error: null,
       });
     });
 
-    it("should handle a fetchUserRequest being updated loading = true", () => {
-      const output = userSlice(previousState, fetchRecentTransactionRequest());
+    it("should handle a fetchRecentTransactionRequest being updated loading = true", () => {
+      const output = recentTransactionSlice(previousState, fetchRecentTransactionRequest());
       expect(output).toEqual({
         data: [],
         loading: true,
@@ -33,8 +33,8 @@ describe("RecentTransactionSlice", () => {
       });
     });
 
-    it("should handle a fetchUserSuccess being added to a name, greetingMessage and updated loading to false", () => {
-      const output = userSlice(
+    it("should handle a fetchRecentTransactionSuccess being added to a name, greetingMessage and updated loading to false", () => {
+      const output = recentTransactionSlice(
         previousState,
         fetchRecentTransactionSuccess(recentTransactions)
       );
@@ -46,8 +46,8 @@ describe("RecentTransactionSlice", () => {
       });
     });
 
-    it("should handle a fetchUserSuccess being added to a name, greetingMessage and updated loading to false", () => {
-      const output = userSlice(
+    it("should handle a fetchRecentTransactionSuccess being added to a name, greetingMessage and updated loading to false", () => {
+      const output = recentTransactionSlice(
         previousState,
         fetchRecentTransactionFailure("error")
       );
@@ -69,7 +69,7 @@ describe("RecentTransactionSlice", () => {
       },
     } as RootState;
 
-    it("should return user info", () => {
+    it("should return recent transactions info", () => {
       expect(getRecentTransaction(mockState)).toEqual(
         mockState.recentTransaction.data
       );
