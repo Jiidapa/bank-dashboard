@@ -1,4 +1,4 @@
-import Pin from "@/features/pin/Pin";
+import Pin from "@/modules/pin/Pin";
 
 const PinPage = () => {
   return <Pin />;
