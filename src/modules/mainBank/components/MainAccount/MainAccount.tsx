@@ -1,23 +1,15 @@
 "use client";
 
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchAccountsRequest,
-  getAccounts,
-} from "@/store/slices/account/accountSlice";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getAccounts } from "@/store/slices/account/accountSlice";
 import { Account } from "@/mock/apiResponse";
+import { toTitleCase } from "@/modules/mainBank/utils";
 
 const MainAccount = () => {
-  const dispatch = useDispatch();
   const accounts = useSelector(getAccounts);
   const targetAccount = accounts.find(
     (account: Account) => account.isMainAccount
   );
-
-  useEffect(() => {
-    dispatch(fetchAccountsRequest());
-  }, []);
 
   return (
     <>
@@ -25,9 +17,7 @@ const MainAccount = () => {
         <div className="main-acc main-acc--large main-loading main-loading--order3">
           <div className="main-acc__top" data-testid="main-account-top">
             <h2 className="main-acc__name">
-              {targetAccount.type.replace(/(^\w|-\w)/g, (match) =>
-                match.toUpperCase().replace("-", " ")
-              )}
+              {toTitleCase(targetAccount.type)}
             </h2>
             <span className="main-acc__amount">฿62,000.00</span>
             <span className="main-acc__detail main-acc__detail--num">

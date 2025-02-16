@@ -1,18 +1,14 @@
 import { render } from "@testing-library/react";
 import MainAccount from "./MainAccount";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { accounts } from "@/mock/apiResponse";
 
 jest.mock("react-redux", () => ({
-  useDispatch: jest.fn(),
   useSelector: jest.fn(),
 }));
 
 describe("MainAccount", () => {
-  const mockDispatch = jest.fn();
-
   beforeEach(() => {
-    (useDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
     (useSelector as unknown as jest.Mock).mockImplementation((selector) =>
       selector({
         account: {
