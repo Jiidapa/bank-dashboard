@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Greeting from "@/modules/mainBank/components/Greeting/Greeting";
 import RecentTransactions from "@/modules/mainBank/components/RecentTransactions/RecentTransactions";
+import DebitCards from "@/modules/mainBank/components/DebitCards/DebitCards";
 
 const MainBank = () => {
   return (
@@ -110,76 +111,8 @@ const MainBank = () => {
               To enjoy 0.5% cash back from online purchase.
             </p>
           </a>
-          <div className="debit-swipe__wrap main-loading main-loading--order6">
-            <div className="debit-swipe__inner">
-              <div className="debit-swipe__lst" style={{ width: "1595px" }}>
-                <a
-                  href="#"
-                  className="debit-swipe__item"
-                  style={{ backgroundColor: "#00a1e2" }}
-                  data-testid="my-salary"
-                >
-                  <strong className="debit-swipe__name">My Salary</strong>
-                  <span className="debit-swipe__etc">In progress</span>
-                  <span className="debit-swipe__issue">Issued by TestLab</span>
-                </a>
-                <a
-                  href="#"
-                  className="debit-swipe__item"
-                  style={{ backgroundColor: "#ff8300" }}
-                  data-testid="for-my-dream-1"
-                >
-                  <strong className="debit-swipe__name">For My Dream</strong>
-                  <span className="debit-swipe__etc">In progress</span>
-                  <span className="debit-swipe__issue">Issued by TestLab</span>
-                </a>
-                <a
-                  href="#"
-                  className="debit-swipe__item"
-                  style={{
-                    color: "#97999e",
-                    backgroundColor: "#ffffff",
-                    borderColor: "#f2f3f7",
-                  }}
-                  data-testid="for-my-dream-2"
-                >
-                  <strong className="debit-swipe__name">For My Dream</strong>
-                  <span className="debit-swipe__etc debit-swipe__etc--active">
-                    <span className="debit-swipe__etc__num">
-                      9440 78&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; 3115
-                    </span>
-                  </span>
-                  <span
-                    className="debit-swipe__issue"
-                    style={{ color: "#d3d3d2" }}
-                  >
-                    Issued by TestLab
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="debit-swipe__item"
-                  style={{ backgroundColor: "#91c9ee" }}
-                  data-testid="for-my-dream-3"
-                >
-                  <strong className="debit-swipe__name">For My Dream</strong>
-                  <span className="debit-swipe__etc debit-swipe__etc--active">
-                    <span className="debit-swipe__etc__num">
-                      9440 78&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; 3115
-                    </span>
-                  </span>
-                  <span className="debit-swipe__issue">Issued by TestLab</span>
-                </a>
 
-                <a
-                  href="#"
-                  className="debit-swipe__item debit-swipe__item--all"
-                >
-                  See all
-                </a>
-              </div>
-            </div>
-          </div>
+          <DebitCards />
 
           <div
             className="main-acc is-bluegreen is-small"

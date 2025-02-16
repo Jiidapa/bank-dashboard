@@ -1438,3 +1438,11 @@ button {
       0 0;
   }
 }
+
+.text-dark-gray {
+  color: #97999e;
+}
+
+.text-light-gray {
+  color: #d3d3d2;
+}

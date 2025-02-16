@@ -12,7 +12,7 @@ const mockStore = {
     loading: false,
     error: null,
   },
-  transactions: {
+  recentTransaction: {
     data: recentTransactions,
     loading: false,
     error: null,

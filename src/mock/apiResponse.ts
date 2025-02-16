@@ -21,7 +21,7 @@ export type RecentTransaction = {
   isBank: boolean;
 };
 
-type DebitCard = {
+export type DebitCard = {
   name: string;
   status: string;
   issuer: string;

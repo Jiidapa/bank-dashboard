@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import PinPage from "./page";
-import MockReduxProvider from "@/mock/MockProvider";
+import MockReduxProvider from "@/mock/MockReduxProvider";
 
 const meta: Meta<typeof PinPage> = {
   title: "Pages/Pin",

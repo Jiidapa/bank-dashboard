@@ -2,6 +2,7 @@ import MainBank from "./MainBank";
 import { render, within } from "@testing-library/react";
 import { ComponentProps } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { debitCards } from "@/mock/apiResponse";
 
 jest.mock("next/image", () => ({
   __esModule: true,
@@ -61,6 +62,9 @@ describe("Main Bank", () => {
               isBank: false,
             },
           ],
+        },
+        debitCard: {
+          data: debitCards,
         },
       })
     );
@@ -189,7 +193,7 @@ describe("Main Bank", () => {
 
       expect(getByText("My Salary")).toBeInTheDocument();
 
-      const mySalaryCard = getByTestId("my-salary");
+      const mySalaryCard = getByTestId("debit-card-0");
       expect(within(mySalaryCard).getByText("In progress")).toBeInTheDocument();
       expect(
         within(mySalaryCard).getByText("Issued by TestLab")
@@ -199,7 +203,7 @@ describe("Main Bank", () => {
     it("should render first `For My Dream`", () => {
       const { getByTestId } = renderMainBank();
 
-      const foMyDream1 = getByTestId("for-my-dream-1");
+      const foMyDream1 = getByTestId("debit-card-1");
       expect(within(foMyDream1).getByText("For My Dream")).toBeInTheDocument();
       expect(within(foMyDream1).getByText("In progress")).toBeInTheDocument();
       expect(
@@ -207,24 +211,11 @@ describe("Main Bank", () => {
       ).toBeInTheDocument();
     });
 
-    it("should render second `For My Dream`", () => {
+    it("should render first `My Debit card`", () => {
       const { getByTestId } = renderMainBank();
 
-      const foMyDream1 = getByTestId("for-my-dream-2");
-      expect(within(foMyDream1).getByText("For My Dream")).toBeInTheDocument();
-      expect(
-        within(foMyDream1).getByText("9440 78•• •••• 3115")
-      ).toBeInTheDocument();
-      expect(
-        within(foMyDream1).getByText("Issued by TestLab")
-      ).toBeInTheDocument();
-    });
-
-    it("should render third `For My Dream`", () => {
-      const { getByTestId } = renderMainBank();
-
-      const foMyDream1 = getByTestId("for-my-dream-3");
-      expect(within(foMyDream1).getByText("For My Dream")).toBeInTheDocument();
+      const foMyDream1 = getByTestId("debit-card-2");
+      expect(within(foMyDream1).getByText("My Debit card")).toBeInTheDocument();
       expect(
         within(foMyDream1).getByText("9440 78•• •••• 3115")
       ).toBeInTheDocument();
