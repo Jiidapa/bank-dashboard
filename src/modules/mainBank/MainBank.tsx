@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Greeting from "@/modules/mainBank/components/Greeting/Greeting";
 import RecentTransactions from "@/modules/mainBank/components/RecentTransactions/RecentTransactions";
 import DebitCards from "@/modules/mainBank/components/DebitCards/DebitCards";
+import Banners from "@/modules/mainBank/components/Banners/Banners";
 
 const MainBank = () => {
   return (
@@ -292,20 +292,7 @@ const MainBank = () => {
               <span className="blind">Pay</span>
             </a>
           </div>
-          <a href="#" className="main-prod">
-            <span className="main-prod__cms-ico">
-              <Image
-                src="https://dummyimage.com/54x54/999/fff"
-                width={54}
-                height={54}
-                alt="Main Product"
-              />
-            </span>
-            <strong className="main-prod__tit">Want some money?</strong>
-            <p className="main-prod__dsc">
-              You can start apply &#39;Clare&#39;
-            </p>
-          </a>
+          <Banners />
 
           <div className="main-tb">
             <a href="#" className="link-to">

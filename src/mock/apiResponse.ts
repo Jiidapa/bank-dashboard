@@ -30,7 +30,7 @@ export type DebitCard = {
   number?: string;
 };
 
-type Banner = {
+export type Banner = {
   title: string;
   description: string;
   image: string;
