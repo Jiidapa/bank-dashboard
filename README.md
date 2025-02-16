@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bank Dashboard
+This is a bank dashboard to manage and monitor financial activities using a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Storybook](#storybook)
+4. [Testing](#testing)
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+```
+.
+├── .husky                              # Pre-commit script  
+├── .storybook                          # Storybook configurations file
+├── .playwright-report                  # Auto generated file after completing visual testing
+├── src
+│   └── app                             # Next.js app router                
+│   └── components                      # Shared componets             
+│   └── constant                        # All constants             
+│   └── mock                            # For mocking data/components            
+│   └── modules                         # Module            
+│       └── mainBank                  
+│           └── components              # All components that using only in this module     
+│               └── Exmaple.tsx           
+│           └── MainBank.tsx            # A components in module      
+│           └── MainBank.test.tsx       # A test file of component in mobule              
+│           └── MainBank.stories.tsx    # A storybook of component in module                  
+│   └── styles                          # Styling            
+│   └── services                        # Api            
+│   └── store                           # Redux store            
+│       └── sagas                  
+│       └── slices                   
+├── visual-tests                        # Visual test and snapshot results
+└── playwright.config.ts                # Playwright test configuration file
+└── jest.config.ts                      # Jest configuration file
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Storybook
 
-## Learn More
+A UI development, testing, and documentation application. Run it with this command:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm storybook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Unit testing
+This project uses Jest as a test runner and assertion library and uses React Testing Library for UI testing
 
-## Deploy on Vercel
+To run unit testing
+```bash
+pnpm run test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To check code coverage
+```bash
+pnpm run coverage
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Visual Testing
+
+This project uses [playwright](https://playwright.dev/) to do visual testing in Storybook environment.
+
+To run visual testing:
+
+```bash
+pnpm visual
+```
+
+To update screenshot, when you're updating UI:
+
+```bash
+pnpm visual:update
+```
