@@ -1,4 +1,4 @@
-type User = {
+export type User = {
   name: string;
   greetingMessage: string;
 };
@@ -38,7 +38,7 @@ type Banner = {
 
 export const user: User = {
   name: "Clare",
-  greetingMessage: "Have a nice day Clare",
+  greetingMessage: "Have a nice day",
 };
 
 export const account: Account[] = [

@@ -5,6 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  "@reduxjs/toolkit":
+    specifier: ^2.5.1
+    version: 2.5.1(react-redux@9.2.0)(react@19.0.0)
+  axios:
+    specifier: ^1.7.9
+    version: 1.7.9
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   next:
     specifier: 15.1.7
     version: 15.1.7(@babel/core@7.26.8)(@playwright/test@1.50.1)(react-dom@19.0.0)(react@19.0.0)
@@ -14,6 +23,12 @@ dependencies:
   react-dom:
     specifier: ^19.0.0
     version: 19.0.0(react@19.0.0)
+  react-redux:
+    specifier: ^9.2.0
+    version: 9.2.0(@types/react@19.0.8)(react@19.0.0)(redux@5.0.1)
+  redux-saga:
+    specifier: ^1.3.0
+    version: 1.3.0
 
 devDependencies:
   "@chromatic-com/storybook":
@@ -103,6 +118,9 @@ devDependencies:
   prettier:
     specifier: ^3.5.1
     version: 3.5.1
+  redux-saga-test-plan:
+    specifier: ^4.0.6
+    version: 4.0.6(@redux-saga/is@1.1.3)(@redux-saga/symbols@1.1.3)(redux-saga@1.3.0)
   storybook:
     specifier: ^8.5.5
     version: 8.5.5(prettier@3.5.1)
@@ -1725,7 +1743,6 @@ packages:
     engines: { node: ">=6.9.0" }
     dependencies:
       regenerator-runtime: 0.14.1
-    dev: true
 
   /@babel/template@7.26.8:
     resolution:
@@ -3045,6 +3062,77 @@ packages:
       webpack: 5.97.1(@swc/core@1.10.16)(esbuild@0.24.2)
     dev: true
 
+  /@redux-saga/core@1.3.0:
+    resolution:
+      {
+        integrity: sha512-L+i+qIGuyWn7CIg7k1MteHGfttKPmxwZR5E7OsGikCL2LzYA0RERlaUY00Y3P3ZV2EYgrsYlBrGs6cJP5OKKqA==,
+      }
+    dependencies:
+      "@babel/runtime": 7.26.7
+      "@redux-saga/deferred": 1.2.1
+      "@redux-saga/delay-p": 1.2.1
+      "@redux-saga/is": 1.1.3
+      "@redux-saga/symbols": 1.1.3
+      "@redux-saga/types": 1.2.1
+      typescript-tuple: 2.2.1
+
+  /@redux-saga/deferred@1.2.1:
+    resolution:
+      {
+        integrity: sha512-cmin3IuuzMdfQjA0lG4B+jX+9HdTgHZZ+6u3jRAOwGUxy77GSlTi4Qp2d6PM1PUoTmQUR5aijlA39scWWPF31g==,
+      }
+
+  /@redux-saga/delay-p@1.2.1:
+    resolution:
+      {
+        integrity: sha512-MdiDxZdvb1m+Y0s4/hgdcAXntpUytr9g0hpcOO1XFVyyzkrDu3SKPgBFOtHn7lhu7n24ZKIAT1qtKyQjHqRd+w==,
+      }
+    dependencies:
+      "@redux-saga/symbols": 1.1.3
+
+  /@redux-saga/is@1.1.3:
+    resolution:
+      {
+        integrity: sha512-naXrkETG1jLRfVfhOx/ZdLj0EyAzHYbgJWkXbB3qFliPcHKiWbv/ULQryOAEKyjrhiclmr6AMdgsXFyx7/yE6Q==,
+      }
+    dependencies:
+      "@redux-saga/symbols": 1.1.3
+      "@redux-saga/types": 1.2.1
+
+  /@redux-saga/symbols@1.1.3:
+    resolution:
+      {
+        integrity: sha512-hCx6ZvU4QAEUojETnX8EVg4ubNLBFl1Lps4j2tX7o45x/2qg37m3c6v+kSp8xjDJY+2tJw4QB3j8o8dsl1FDXg==,
+      }
+
+  /@redux-saga/types@1.2.1:
+    resolution:
+      {
+        integrity: sha512-1dgmkh+3so0+LlBWRhGA33ua4MYr7tUOj+a9Si28vUi0IUFNbff1T3sgpeDJI/LaC75bBYnQ0A3wXjn0OrRNBA==,
+      }
+
+  /@reduxjs/toolkit@2.5.1(react-redux@9.2.0)(react@19.0.0):
+    resolution:
+      {
+        integrity: sha512-UHhy3p0oUpdhnSxyDjaRDYaw8Xra75UiLbCiRozVPHjfDwNYkh0TsVm/1OmTW8Md+iDAJmYPWUKMvsMc2GtpNg==,
+      }
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18 || ^19
+      react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+    dependencies:
+      immer: 10.1.1
+      react: 19.0.0
+      react-redux: 9.2.0(@types/react@19.0.8)(react@19.0.0)(redux@5.0.1)
+      redux: 5.0.1
+      redux-thunk: 3.1.0(redux@5.0.1)
+      reselect: 5.1.1
+    dev: false
+
   /@rtsao/scc@1.1.0:
     resolution:
       {
@@ -4284,7 +4372,6 @@ packages:
       }
     dependencies:
       csstype: 3.1.3
-    dev: true
 
   /@types/resolve@1.20.6:
     resolution:
@@ -4313,6 +4400,13 @@ packages:
         integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==,
       }
     dev: true
+
+  /@types/use-sync-external-store@0.0.6:
+    resolution:
+      {
+        integrity: sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==,
+      }
+    dev: false
 
   /@types/uuid@9.0.8:
     resolution:
@@ -5204,7 +5298,6 @@ packages:
       {
         integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==,
       }
-    dev: true
 
   /available-typed-arrays@1.0.7:
     resolution:
@@ -5264,7 +5357,6 @@ packages:
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
-    dev: true
 
   /axobject-query@4.1.0:
     resolution:
@@ -6005,6 +6097,14 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
+  /clsx@2.1.1:
+    resolution:
+      {
+        integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==,
+      }
+    engines: { node: ">=6" }
+    dev: false
+
   /co@4.6.0:
     resolution:
       {
@@ -6090,7 +6190,6 @@ packages:
     engines: { node: ">= 0.8" }
     dependencies:
       delayed-stream: 1.0.0
-    dev: true
 
   /commander@12.1.0:
     resolution:
@@ -6418,7 +6517,6 @@ packages:
       {
         integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==,
       }
-    dev: true
 
   /cwd@0.10.0:
     resolution:
@@ -6620,7 +6718,6 @@ packages:
         integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==,
       }
     engines: { node: ">=0.4.0" }
-    dev: true
 
   /dequal@2.0.3:
     resolution:
@@ -7974,7 +8071,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /for-each@0.3.5:
     resolution:
@@ -8033,7 +8129,6 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
-    dev: true
 
   /fromentries@1.3.2:
     resolution:
@@ -8096,6 +8191,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /fsm-iterator@1.1.0:
+    resolution:
+      {
+        integrity: sha512-hg47CNYdIGJ5m9WSKh617LHRdvJo4PiF0VkncFLwPVxKvBEQfSPd1qx/xLV/eSusewEu0C8eUFrsLsWlBgIcOg==,
+      }
+    dev: true
 
   /function-bind@1.1.2:
     resolution:
@@ -8642,6 +8744,13 @@ packages:
     dependencies:
       queue: 6.0.2
     dev: true
+
+  /immer@10.1.1:
+    resolution:
+      {
+        integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==,
+      }
+    dev: false
 
   /import-fresh@3.3.1:
     resolution:
@@ -10273,6 +10382,21 @@ packages:
       }
     dev: true
 
+  /lodash.isequal@4.5.0:
+    resolution:
+      {
+        integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==,
+      }
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+    dev: true
+
+  /lodash.ismatch@4.4.0:
+    resolution:
+      {
+        integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==,
+      }
+    dev: true
+
   /lodash.merge@4.6.2:
     resolution:
       {
@@ -10483,7 +10607,6 @@ packages:
         integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==,
       }
     engines: { node: ">= 0.6" }
-    dev: true
 
   /mime-types@2.1.35:
     resolution:
@@ -10493,7 +10616,6 @@ packages:
     engines: { node: ">= 0.6" }
     dependencies:
       mime-db: 1.52.0
-    dev: true
 
   /mimic-fn@2.1.0:
     resolution:
@@ -11547,7 +11669,6 @@ packages:
       {
         integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==,
       }
-    dev: true
 
   /psl@1.15.0:
     resolution:
@@ -11739,6 +11860,28 @@ packages:
       }
     dev: true
 
+  /react-redux@9.2.0(@types/react@19.0.8)(react@19.0.0)(redux@5.0.1):
+    resolution:
+      {
+        integrity: sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==,
+      }
+    peerDependencies:
+      "@types/react": ^18.2.25 || ^19
+      react: ^18.0 || ^19
+      redux: ^5.0.0
+    peerDependenciesMeta:
+      "@types/react":
+        optional: true
+      redux:
+        optional: true
+    dependencies:
+      "@types/react": 19.0.8
+      "@types/use-sync-external-store": 0.0.6
+      react: 19.0.0
+      redux: 5.0.1
+      use-sync-external-store: 1.4.0(react@19.0.0)
+    dev: false
+
   /react-refresh@0.14.2:
     resolution:
       {
@@ -11830,6 +11973,50 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
+  /redux-saga-test-plan@4.0.6(@redux-saga/is@1.1.3)(@redux-saga/symbols@1.1.3)(redux-saga@1.3.0):
+    resolution:
+      {
+        integrity: sha512-ESdbFoDWCeJ/EiFdUNSCGtA2CC9tnuvHDm6k06gVFa98EIeR2hpzFkGk9kJ1/hpMUnYFp+OOEEITIrZeDYBfFg==,
+      }
+    peerDependencies:
+      "@redux-saga/is": ^1.0.1
+      "@redux-saga/symbols": ^1.0.1
+      redux-saga: ^1.0.1
+    dependencies:
+      "@redux-saga/is": 1.1.3
+      "@redux-saga/symbols": 1.1.3
+      fsm-iterator: 1.1.0
+      lodash.isequal: 4.5.0
+      lodash.ismatch: 4.4.0
+      redux-saga: 1.3.0
+    dev: true
+
+  /redux-saga@1.3.0:
+    resolution:
+      {
+        integrity: sha512-J9RvCeAZXSTAibFY0kGw6Iy4EdyDNW7k6Q+liwX+bsck7QVsU78zz8vpBRweEfANxnnlG/xGGeOvf6r8UXzNJQ==,
+      }
+    dependencies:
+      "@redux-saga/core": 1.3.0
+
+  /redux-thunk@3.1.0(redux@5.0.1):
+    resolution:
+      {
+        integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==,
+      }
+    peerDependencies:
+      redux: ^5.0.0
+    dependencies:
+      redux: 5.0.1
+    dev: false
+
+  /redux@5.0.1:
+    resolution:
+      {
+        integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==,
+      }
+    dev: false
+
   /reflect.getprototypeof@1.0.10:
     resolution:
       {
@@ -11869,7 +12056,6 @@ packages:
       {
         integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==,
       }
-    dev: true
 
   /regenerator-transform@0.15.2:
     resolution:
@@ -11994,6 +12180,13 @@ packages:
         integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==,
       }
     dev: true
+
+  /reselect@5.1.1:
+    resolution:
+      {
+        integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==,
+      }
+    dev: false
 
   /resolve-cwd@3.0.0:
     resolution:
@@ -13396,6 +13589,28 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
+  /typescript-compare@0.0.2:
+    resolution:
+      {
+        integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==,
+      }
+    dependencies:
+      typescript-logic: 0.0.0
+
+  /typescript-logic@0.0.0:
+    resolution:
+      {
+        integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==,
+      }
+
+  /typescript-tuple@2.2.1:
+    resolution:
+      {
+        integrity: sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==,
+      }
+    dependencies:
+      typescript-compare: 0.0.2
+
   /typescript@5.7.3:
     resolution:
       {
@@ -13529,6 +13744,17 @@ packages:
       punycode: 1.4.1
       qs: 6.14.0
     dev: true
+
+  /use-sync-external-store@1.4.0(react@19.0.0):
+    resolution:
+      {
+        integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==,
+      }
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      react: 19.0.0
+    dev: false
 
   /util-deprecate@1.0.2:
     resolution:
