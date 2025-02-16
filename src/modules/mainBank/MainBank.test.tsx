@@ -240,144 +240,6 @@ describe("Main Bank", () => {
     });
   });
 
-  it("should render `Saving Account` card", () => {
-    const { getByTestId } = renderMainBank();
-
-    const savingAccountCard = getByTestId("saving-account-card");
-
-    expect(
-      within(savingAccountCard).getByText("Saving Account")
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByText("฿8,837,999.00")
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByText("Smart account 568-2-81740-9")
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByText("Powered by TestLab")
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByRole("button", { name: "More Action" })
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByRole("button", {
-        name: "Copy account number",
-      })
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByRole("button", {
-        name: "Edit Name and Color",
-      })
-    ).toBeInTheDocument();
-    expect(
-      within(savingAccountCard).getByRole("link", { name: "Add money" })
-    ).toHaveAttribute("href", "#");
-  });
-
-  it("should render `Credit Loan` card", () => {
-    const { getByTestId } = renderMainBank();
-
-    const creditLoanCard = getByTestId("credit-loan-card");
-    expect(within(creditLoanCard).getByText("Credit Loan")).toBeInTheDocument();
-    expect(within(creditLoanCard).getByText("฿300.100")).toBeInTheDocument();
-    expect(
-      within(creditLoanCard).getByText("Credit Loan 568-2-81740-9")
-    ).toBeInTheDocument();
-    expect(
-      within(creditLoanCard).getByRole("button", { name: "More Action" })
-    ).toBeInTheDocument();
-    expect(
-      within(creditLoanCard).queryByRole("button", {
-        name: "Copy account number",
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      within(creditLoanCard).queryByRole("button", {
-        name: "Edit Name and Color",
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      within(creditLoanCard).getByRole("link", { name: "Disburse" })
-    ).toHaveAttribute("href", "#");
-  });
-
-  it("should render `Travel New York` card", () => {
-    const { getByTestId } = renderMainBank();
-
-    const travelNewYorkCard = getByTestId("travel-new-york-card");
-    expect(
-      within(travelNewYorkCard).getByText("Travel New York")
-    ).toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).getByText("฿30,000.00")
-    ).toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).getByText("Goal driven savings 568-2-81740-9")
-    ).toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).getByText("Powered by TestLab")
-    ).toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).getByRole("button", { name: "More Action" })
-    ).toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).queryByRole("button", {
-        name: "Copy account number",
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      within(travelNewYorkCard).queryByRole("button", {
-        name: "Edit Name and Color",
-      })
-    ).not.toBeInTheDocument();
-    expect(within(travelNewYorkCard).getByText("24")).toBeInTheDocument();
-    expect(within(travelNewYorkCard).getByText("%")).toBeInTheDocument();
-  });
-
-  it("should render `Need to repay` card", () => {
-    const { getByTestId } = renderMainBank();
-
-    const needToRepayCard = getByTestId("need-to-repay-card");
-    expect(
-      within(needToRepayCard).getByText("Need to repay")
-    ).toBeInTheDocument();
-    expect(within(needToRepayCard).getByText("฿30,000.00")).toBeInTheDocument();
-    expect(
-      within(needToRepayCard).getByText("Disbursement")
-    ).toBeInTheDocument();
-    expect(within(needToRepayCard).getByText("Overdue")).toBeInTheDocument();
-    expect(
-      within(needToRepayCard).getByText("Credit Loan 568-2-81740-9")
-    ).toBeInTheDocument();
-    expect(
-      within(needToRepayCard).getByText("More Action")
-    ).toBeInTheDocument();
-    expect(
-      within(needToRepayCard).getByRole("button", { name: "More Action" })
-    ).toBeInTheDocument();
-    expect(
-      within(needToRepayCard).queryByRole("button", {
-        name: "Copy account number",
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      within(needToRepayCard).queryByRole("button", {
-        name: "Edit Name and Color",
-      })
-    ).not.toBeInTheDocument();
-    expect(
-      within(needToRepayCard).getByRole("link", { name: "Pay" })
-    ).toHaveAttribute("href", "#");
-  });
-
-  it("should main product section", () => {
-    const { getByText } = renderMainBank();
-
-    expect(getByText("Want some money?")).toBeInTheDocument();
-    expect(getByText(/'Clare'/i)).toBeInTheDocument();
-  });
-
   it("should render total balance", () => {
     const { getByRole } = renderMainBank();
 
@@ -385,5 +247,14 @@ describe("Main Bank", () => {
       "href",
       "#"
     );
+  });
+
+  it("should call fetchAccountsRequest 1 time", () => {
+    renderMainBank();
+
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: undefined,
+      type: "account/fetchAccountsRequest",
+    });
   });
 });

@@ -63,7 +63,7 @@ export const accounts: Account[] = [
   {
     type: "goal-saving-account",
     amount: 30000.0,
-    currency: "THB",
+    currency: "JPY",
     accountNumber: "568-2-81740-9",
     issuer: "TestLab",
     progress: 24,
@@ -73,7 +73,7 @@ export const accounts: Account[] = [
   {
     type: "credit-loan",
     amount: 30000.0,
-    currency: "THB",
+    currency: "USD",
     accountNumber: "568-2-81740-9",
     issuer: "TestLab",
     flags: ["Disbursement", "Overdue"],
