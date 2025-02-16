@@ -28,6 +28,40 @@ describe("Main Bank", () => {
     (useSelector as unknown as jest.Mock).mockImplementation((selector) =>
       selector({
         user: { name: "Clare", greetingMessage: "Have a nice day" },
+        recentTransaction: {
+          data: [
+            {
+              name: "Emily",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+            {
+              name: "AbcdEfghiJKlmN",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+            {
+              name: "Jone Kiersten",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+            {
+              name: "Emily",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+            {
+              name: "Emily",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+            {
+              name: "MarkYu Gonzales",
+              image: "https://dummyimage.com/54x54/999/fff",
+              isBank: false,
+            },
+          ],
+        },
       })
     );
   });

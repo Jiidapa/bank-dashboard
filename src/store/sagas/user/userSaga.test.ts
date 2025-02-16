@@ -1,6 +1,9 @@
 import { testSaga } from "redux-saga-test-plan";
 import { fetchUserSaga } from "./userSaga";
-import { fetchUserSuccess, fetchUserFailure } from "../../slices/user/userSlice";
+import {
+  fetchUserSuccess,
+  fetchUserFailure,
+} from "../../slices/user/userSlice";
 import { fetchUser } from "@/services/user";
 
 describe("fetchUserSaga", () => {

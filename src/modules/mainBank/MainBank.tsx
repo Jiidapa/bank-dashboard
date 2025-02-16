@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Greeting from "@/modules/mainBank/components/Greeting";
+import Greeting from "@/modules/mainBank/components/Greeting/Greeting";
+import RecentTransactions from "@/modules/mainBank/components/RecentTransactions/RecentTransactions";
 
 const MainBank = () => {
   return (
@@ -91,88 +92,8 @@ const MainBank = () => {
             </div>
           </div>
 
-          <div className="rctly__wrap main-loading main-loading--order5">
-            <ul className="rctly__lst">
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">Emily</span>
-                </a>
-              </li>
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb is-bank">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">AbcdEfghiJKlmN</span>
-                </a>
-              </li>
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">Jone Kiersten</span>
-                </a>
-              </li>
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">Emily</span>
-                </a>
-              </li>
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">Emily</span>
-                </a>
-              </li>
-              <li className="rctly__item">
-                <a href="#" className="rctly__link">
-                  <span className="rctly__thumb is-bank">
-                    <Image
-                      src="https://dummyimage.com/54x54/999/fff"
-                      width={54}
-                      height={54}
-                      alt="Recent Transactions Avatar"
-                    />
-                  </span>
-                  <span className="rctly__name">MarkYu Gonzales</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <RecentTransactions />
+
           <a
             className="main-make main-loading main-loading--order6"
             style={{ display: "none" }}

@@ -15,7 +15,7 @@ type Account = {
   progress?: number;
 };
 
-type RecentTransaction = {
+export type RecentTransaction = {
   name: string;
   image: string;
   isBank: boolean;

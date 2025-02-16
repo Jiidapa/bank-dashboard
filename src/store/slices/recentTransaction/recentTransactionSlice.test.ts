@@ -1,38 +1,36 @@
 import userSlice, {
-  getUser,
-  fetchUserRequest,
-  fetchUserSuccess,
-  fetchUserFailure,
-  UserState,
-} from "@/store/slices/user/userSlice";
+  getRecentTransaction,
+  fetchRecentTransactionRequest,
+  fetchRecentTransactionSuccess,
+  fetchRecentTransactionFailure,
+  RecentTransactionState,
+} from "@/store/slices/recentTransaction/recentTransactionSlice";
+import { recentTransactions } from "@/mock/apiResponse";
 import { RootState } from "@/store/store";
 
 const name = "Clare";
 const greetingMessage = "Have a nice day";
 
-describe("userSlice", () => {
+describe("RecentTransactionSlice", () => {
   describe("actions", () => {
-    const previousState: UserState = {
-      name: "",
-      greetingMessage: "",
+    const previousState: RecentTransactionState = {
+      data: [],
       loading: false,
       error: null,
     };
 
     it("should return the initial state", () => {
       expect(userSlice(undefined, { type: "unknown" })).toEqual({
-        name: "",
-        greetingMessage: "",
+        data: [],
         loading: false,
         error: null,
       });
     });
 
     it("should handle a fetchUserRequest being updated loading = true", () => {
-      const output = userSlice(previousState, fetchUserRequest());
+      const output = userSlice(previousState, fetchRecentTransactionRequest());
       expect(output).toEqual({
-        name: "",
-        greetingMessage: "",
+        data: [],
         loading: true,
         error: null,
       });
@@ -41,23 +39,24 @@ describe("userSlice", () => {
     it("should handle a fetchUserSuccess being added to a name, greetingMessage and updated loading to false", () => {
       const output = userSlice(
         previousState,
-        fetchUserSuccess({ name, greetingMessage })
+        fetchRecentTransactionSuccess(recentTransactions)
       );
 
       expect(output).toEqual({
-        name,
-        greetingMessage,
+        data: recentTransactions,
         loading: false,
         error: null,
       });
     });
 
     it("should handle a fetchUserSuccess being added to a name, greetingMessage and updated loading to false", () => {
-      const output = userSlice(previousState, fetchUserFailure("error"));
+      const output = userSlice(
+        previousState,
+        fetchRecentTransactionFailure("error")
+      );
 
       expect(output).toEqual({
-        name: "",
-        greetingMessage: "",
+        data: [],
         loading: false,
         error: "error",
       });
@@ -66,16 +65,17 @@ describe("userSlice", () => {
 
   describe("selectors", () => {
     const mockState = {
-      user: {
-        name,
-        greetingMessage,
+      recentTransaction: {
+        data: recentTransactions,
         loading: false,
         error: null,
       },
     } as RootState;
 
     it("should return user info", () => {
-      expect(getUser(mockState)).toEqual(mockState.user);
+      expect(getRecentTransaction(mockState)).toEqual(
+        mockState.recentTransaction.data
+      );
     });
   });
 });
