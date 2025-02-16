@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/global.css";
+import StoreProvider from "@/components/StoreProvider/StoreProvider";
 
 export const metadata: Metadata = {
   title: "Bank Dashboard",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 }
