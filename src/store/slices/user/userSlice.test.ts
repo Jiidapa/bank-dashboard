@@ -52,7 +52,7 @@ describe("userSlice", () => {
       });
     });
 
-    it("should handle a fetchUserSuccess being added to a name, greetingMessage and updated loading to false", () => {
+    it("should handle a fetchUserFailure being updated error message and loading to false", () => {
       const output = userSlice(previousState, fetchUserFailure("error"));
 
       expect(output).toEqual({

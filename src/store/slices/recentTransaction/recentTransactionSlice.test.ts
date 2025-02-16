@@ -24,7 +24,7 @@ describe("RecentTransactionSlice", () => {
       });
     });
 
-    it("should handle a fetchRecentTransactionRequest being updated loading = true", () => {
+    it("should handle a fetchRecentTransactionRequest being updated loading to true", () => {
       const output = recentTransactionSlice(previousState, fetchRecentTransactionRequest());
       expect(output).toEqual({
         data: [],
@@ -33,7 +33,7 @@ describe("RecentTransactionSlice", () => {
       });
     });
 
-    it("should handle a fetchRecentTransactionSuccess being added to a name, greetingMessage and updated loading to false", () => {
+    it("should handle a fetchRecentTransactionSuccess being added recent transactions and updated loading to false", () => {
       const output = recentTransactionSlice(
         previousState,
         fetchRecentTransactionSuccess(recentTransactions)
@@ -46,7 +46,7 @@ describe("RecentTransactionSlice", () => {
       });
     });
 
-    it("should handle a fetchRecentTransactionSuccess being added to a name, greetingMessage and updated loading to false", () => {
+    it("should handle a fetchRecentTransactionFailure being updated error message and loading to false", () => {
       const output = recentTransactionSlice(
         previousState,
         fetchRecentTransactionFailure("error")
