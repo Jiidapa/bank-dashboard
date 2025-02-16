@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Greeting from "@/modules/mainBank/components/Greeting";
+import Greeting from "@/modules/mainBank/components/Greeting/Greeting";
 import { useDispatch, useSelector } from "react-redux";
 
 jest.mock("react-redux", () => ({
