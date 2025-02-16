@@ -25,7 +25,10 @@ describe("RecentTransactionSlice", () => {
     });
 
     it("should handle a fetchRecentTransactionRequest being updated loading to true", () => {
-      const output = recentTransactionSlice(previousState, fetchRecentTransactionRequest());
+      const output = recentTransactionSlice(
+        previousState,
+        fetchRecentTransactionRequest()
+      );
       expect(output).toEqual({
         data: [],
         loading: true,
