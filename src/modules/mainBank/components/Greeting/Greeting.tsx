@@ -10,7 +10,7 @@ const Greeting = () => {
 
   useEffect(() => {
     dispatch(fetchUserRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="main-top">

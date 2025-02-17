@@ -16,7 +16,7 @@ const DebitCards = () => {
 
   useEffect(() => {
     dispatch(fetchDebitCardsRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="debit-swipe__wrap main-loading main-loading--order6">

@@ -14,7 +14,7 @@ const RecentTransactions = () => {
 
   useEffect(() => {
     dispatch(fetchRecentTransactionRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="rctly__wrap main-loading main-loading--order5">

@@ -15,7 +15,7 @@ const Banners = () => {
 
   useEffect(() => {
     dispatch(fetchBannersRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

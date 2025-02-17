@@ -15,7 +15,7 @@ const MainBank = () => {
 
   useEffect(() => {
     dispatch(fetchAccountsRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="wrap">
