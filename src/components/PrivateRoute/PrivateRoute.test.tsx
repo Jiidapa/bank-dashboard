@@ -31,7 +31,7 @@ describe("PrivateRoute", () => {
 
     const { queryByText } = renderPrivateRoute();
 
-    expect(mockRouterPush).toHaveBeenCalledWith("/pin");
+    expect(mockRouterPush).toHaveBeenCalledWith("/splash");
     expect(queryByText("main page")).not.toBeInTheDocument();
   });
 });
