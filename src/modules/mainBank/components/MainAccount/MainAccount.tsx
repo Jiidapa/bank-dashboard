@@ -3,7 +3,7 @@
 import { useSelector } from "react-redux";
 import { getAccounts } from "@/store/slices/account/accountSlice";
 import { Account } from "@/mock/apiResponse";
-import { toTitleCase } from "@/modules/mainBank/utils";
+import { formatAccountAmount, toTitleCase } from "@/modules/mainBank/utils";
 
 const MainAccount = () => {
   const accounts = useSelector(getAccounts);
@@ -19,7 +19,12 @@ const MainAccount = () => {
             <h2 className="main-acc__name">
               {toTitleCase(targetAccount.type)}
             </h2>
-            <span className="main-acc__amount">฿62,000.00</span>
+            <span className="main-acc__amount">
+              {formatAccountAmount(
+                targetAccount.currency,
+                targetAccount.amount
+              )}
+            </span>
             <span className="main-acc__detail main-acc__detail--num">
               Smart account {targetAccount.accountNumber}
             </span>

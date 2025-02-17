@@ -1,3 +1,5 @@
+"use client";
+
 import Pin from "@/modules/pin/Pin";
 
 const PinPage = () => {
